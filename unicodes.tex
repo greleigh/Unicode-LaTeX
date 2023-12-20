@@ -1,7 +1,20 @@
+% Add common unicode mappings for pdfLaTeX
+% 
+%
+%% This program can be redistributed and/or modified under the terms
+%% of the LaTeX Project Public License Distributed from CTAN archives
+%% in directory macros/latex/base/lppl.txt.
+% 
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{unicode-char}
+  [2023/08/03 v0.01 LaTeX package enabling certain unicode characters]
+
+\RequirePackage{newunicodechar}
+% ----------------
+
 %%%%%%%%%%%%%%%%%
 % UNICODE CHARS
 %%%%%%%%%%%%%%%%%
-\usepackage{newunicodechar}
 \newunicodechar{α}{\alpha}
 \newunicodechar{β}{\beta}
 \newunicodechar{γ}{\gamma}
@@ -13,8 +26,8 @@
 \newunicodechar{ι}{\iota}
 \newunicodechar{κ}{\kappa}
 \newunicodechar{λ}{\lambda}
-\newunicodechar{μ}{\ensuremath{\mu}}
-\newunicodechar{ν}{\ensuremath{\nu}}
+\newunicodechar{μ}{\mu}
+\newunicodechar{ν}{\nu}
 \newunicodechar{ξ}{\xi}
 \newunicodechar{π}{\pi}
 \newunicodechar{ρ}{\rho}
@@ -38,6 +51,10 @@
 
 \newunicodechar{ℵ}{\aleph}
 
+\newunicodechar{ℕ}{\mathbb{N}}
+\newunicodechar{ℂ}{\mathbb{C}}
+\newunicodechar{ℝ}{\mathbb{R}}
+
 \newunicodechar{≤}{\leq}
 \newunicodechar{≥}{\geq}
 \newunicodechar{≠}{\neq}
@@ -47,48 +64,47 @@
 \newunicodechar{≢}{\not\equiv}
 \newunicodechar{≔}{\coloneq}
 
-%\newunicodechar{≤}{\leq} % Already defined
+% Negated
 \newunicodechar{≰}{\not\leq}
-%\newunicodechar{≥}{\geq} % Already defined
 \newunicodechar{≱}{\not\geq}
 \newunicodechar{≮}{\not<}
 \newunicodechar{≯}{\not>}
 
-%\newunicodechar{∂}{\partial}
-%\newunicodechar{∆}{\triangle} % or \laplace?
+\newunicodechar{∂}{\partial}
+\newunicodechar{∆}{\triangle} % or \laplace?
 
-%\newunicodechar{∫}{\int}
+\newunicodechar{∫}{\int}
 \newunicodechar{∑}{\sum}
 \newunicodechar{∏}{\prod}
 
-%\newunicodechar{∞}{\infty}
-%\newunicodechar{∂}{\partial}
+\newunicodechar{∞}{\infty}
 
-%\newunicodechar{∓}{\mp}
-%\newunicodechar{±}{\pm}
+\newunicodechar{∓}{\mp}
+\newunicodechar{±}{\pm}
 \newunicodechar{×}{\times}
 
 
-%\newunicodechar{⊕}{\oplus}
-%\newunicodechar{⊗}{\otimes}
-%\newunicodechar{⊞}{\boxplus}
+\newunicodechar{⊕}{\oplus}
+\newunicodechar{⊗}{\otimes}
+\newunicodechar{⊞}{\boxplus}
 
-%\newunicodechar{∇}{\nabla}
+\newunicodechar{∇}{\nabla}
 \newunicodechar{√}{\sqrt}
 
-%\newunicodechar{·}{\cdot} % already defined
+\newunicodechar{·}{\cdot} % 
 \newunicodechar{∘}{\circ}
 
 % Logical notation
-\newunicodechar{¬}{\lnot} % negation -- already defined
+\newunicodechar{¬}{\lnot} % negation
 \newunicodechar{∧}{\land} % conjunction
 \newunicodechar{∨}{\lor}  % disjunction
-\newunicodechar{→}{\rightarrow} % conditional -- already defined
+\newunicodechar{→}{\rightarrow} % conditional 
 \newunicodechar{↔}{\leftrightarrow} % conditional
 \newunicodechar{⊥}{\bot}
 \newunicodechar{⊤}{\top}
-\newunicodechar{□}{\bo} % \bo assumed defined
-\newunicodechar{◇}{\dia} % \dia assumed defined
+\newunicodechar{□}{\square} % 
+\newunicodechar{◇}{\diamond} % 
+\newunicodechar{⬦}{\diamond} % 
 
 \newunicodechar{⟨}{\langle}
 \newunicodechar{⟩}{\rangle}
@@ -96,6 +112,7 @@
 \newunicodechar{∀}{\forall}
 \newunicodechar{∃}{\exists}
 
+% Arrows
 \newunicodechar{↦}{\mapsto}
 %\newunicodechar{→}{\rightarrow} % defined above
 \newunicodechar{⇝}{\rightsquigarrow}
@@ -111,8 +128,7 @@
 \newunicodechar{⊓}{\sqcap}
 \newunicodechar{⊔}{\sqcup}
 % Binary relations
-\newunicodechar{◁}{\subform}
-\newunicodechar{▷}{\supform}
+\newunicodechar{◁}{\vartriangleleft}
 \newunicodechar{≼}{\preccurlyeq}
 \newunicodechar{≺}{\prec}
 \newunicodechar{⊂}{\subset}
@@ -136,40 +152,42 @@
 % 
 \newunicodechar{⊢}{\vdash}
 \newunicodechar{⊬}{\not\vdash}
-\newunicodechar{⊨}{\models}
-\newunicodechar{⊭}{\not\models}
+\newunicodechar{⊨}{\vDash}
+\newunicodechar{⊭}{\nvDash}
 %\newunicodechar{≤}{\le}
 %\newunicodechar{≥}{\ge}
 
 \newunicodechar{∖}{\setminus}
 %\newunicodechar{†}{\dag}
 
-%\newunicodechar{₀}{_0}
-%\newunicodechar{₁}{_1}
-%\newunicodechar{₂}{_2}
-%\newunicodechar{₃}{_3}
-%\newunicodechar{₄}{_4}
-%\newunicodechar{₅}{_5}
-%\newunicodechar{₆}{_6}
-%\newunicodechar{₇}{_7}
-%\newunicodechar{₈}{_8}
-%\newunicodechar{₉}{_9}
-%\newunicodechar{⁰}{^0}
-%\newunicodechar{¹}{^1}
-%\newunicodechar{²}{^2}
-%\newunicodechar{³}{^3}
-%\newunicodechar{⁴}{^4}
-%\newunicodechar{⁵}{^5}
-%\newunicodechar{⁶}{^6}
-%\newunicodechar{⁷}{^7}
-%\newunicodechar{⁸}{^8}
-%\newunicodechar{⁹}{^9}
-%\newunicodechar{ⁱ}{^i}
-%\newunicodechar{ⁿ}{^n}
-%\newunicodechar{ₙ}{_n}
+\newunicodechar{₀}{_0}
+\newunicodechar{₁}{_1}
+\newunicodechar{₂}{_2}
+\newunicodechar{₃}{_3}
+\newunicodechar{₄}{_4}
+\newunicodechar{₅}{_5}
+\newunicodechar{₆}{_6}
+\newunicodechar{₇}{_7}
+\newunicodechar{₈}{_8}
+\newunicodechar{₉}{_9}
+\newunicodechar{⁰}{^0}
+\newunicodechar{¹}{^1}
+\newunicodechar{²}{^2}
+\newunicodechar{³}{^3}
+\newunicodechar{⁴}{^4}
+\newunicodechar{⁵}{^5}
+\newunicodechar{⁶}{^6}
+\newunicodechar{⁷}{^7}
+\newunicodechar{⁸}{^8}
+\newunicodechar{⁹}{^9}
+\newunicodechar{ⁱ}{^i}
+\newunicodechar{ⁿ}{^n}
+\newunicodechar{ₙ}{_n}
 
 \newunicodechar{…}{\dots}
 \newunicodechar{⋯}{\dotsm}
 
-% Misc
+
+%%
+%% End of file `mypackage.sty'.
 \endinput
